@@ -91,6 +91,16 @@ class Rust < Formula
   end
 
   test do
-    system false
+    system bin/"rustdoc", "-h"
+    (testpath/"hello.rs").write <<~EOS
+      fn main() {
+        println!("hello, world");
+      }
+    EOS
+    system bin/"rustc", "hello.rs"
+    assert_equal "hello, world\n", `./hello`
+    system bin/"cargo", "new", "hello_world", "--bin"
+    assert_equal "Hello, world!",
+                 (testpath/"hello_world").cd { `#{bin}/cargo run`.split("\n").last }
   end
 end
