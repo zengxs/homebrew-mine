@@ -9,7 +9,7 @@ class Rustfmt < Formula
   version "1.2.2,2019-07-04"
   sha256 "9cce97f9b218684b0bfa57c361272271264010aa4cc93b5581390b002e2028be"
 
-  depends_on "rust"
+  depends_on "zengxs/mine/cargo"
 
   def install
     prefix.install Dir[buildpath/"rustfmt-preview/*"]
