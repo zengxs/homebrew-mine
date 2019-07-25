@@ -14,8 +14,7 @@ jobs:
         ln -s "$PWD" "$HOMEBREW_TAP_DIR"
       displayName: Update homebrew
 
-    - bash: brew test-bot
-      workingDirectory: $(HOMEBREW_TAP_DIR)
+    - bash: brew test-bot --ci-master --tap=zengxs/mine
       displayName: Run brew test-bot
 
     # FIXME: brew cask ci cause failed
