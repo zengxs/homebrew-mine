@@ -2,12 +2,13 @@ jobs:
 - job: macOS
   pool:
     vmImage: macOS-10.14
+  variables:
+    HOMEBREW_TAP_DIR: /usr/local/Homebrew/Library/Taps/zengxs/homebrew-mine
   steps:
     - bash: |
         set -e
         sudo xcode-select --switch /Applications/Xcode_10.2.app/Contents/Developer
         brew update
-        HOMEBREW_TAP_DIR="/usr/local/Homebrew/Library/Taps/zengxs/homebrew-mine"
         mkdir -p "$HOMEBREW_TAP_DIR"
         rm -rf "$HOMEBREW_TAP_DIR"
         ln -s "$PWD" "$HOMEBREW_TAP_DIR"
@@ -15,7 +16,9 @@ jobs:
       displayName: Update homebrew
 
     - bash: brew test-bot
+      workingDirectory: $(HOMEBREW_TAP_DIR)
       displayName: Run brew test-bot
 
     - bash: brew cask ci
+      workingDirectory: $(HOMEBREW_TAP_DIR)
       displayName: Run brew cask ci
