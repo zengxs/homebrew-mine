@@ -11,5 +11,10 @@ jobs:
         mkdir -p "$HOMEBREW_TAP_DIR"
         rm -rf "$HOMEBREW_TAP_DIR"
         ln -s "$PWD" "$HOMEBREW_TAP_DIR"
-        brew test-bot
+      displayName: Update homebrew
+
+    - bash: brew test-bot
       displayName: Run brew test-bot
+
+    - bash: brew cask ci
+      displayName: Run brew cask ci
