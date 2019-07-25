@@ -11,6 +11,7 @@ jobs:
         mkdir -p "$HOMEBREW_TAP_DIR"
         rm -rf "$HOMEBREW_TAP_DIR"
         ln -s "$PWD" "$HOMEBREW_TAP_DIR"
+        cd "$HOMEBREW_TAP_DIR"
       displayName: Update homebrew
 
     - bash: brew test-bot
