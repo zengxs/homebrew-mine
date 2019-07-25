@@ -13,6 +13,16 @@ class MicrosoftDistOpenjdk < Formula
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    assert_match "javac 1.8.0-9", shell_output("#{bin}/javac -version 2>&1")
+
+    (testpath/"Hello.java").write <<~EOS
+      public class Hello {
+        public static void main(String[] args) {
+          System.out.println("Hello World");
+        }
+      }
+    EOS
+    system bin/"javac", "Hello.java"
+    assert_predicate testpath/"Hello.class", :exist?
+    assert_equal "Hello World\n", shell_output("#{bin}/java Hello") 
   end
 end
