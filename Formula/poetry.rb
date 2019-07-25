@@ -16,6 +16,7 @@ class Poetry < Formula
     EOS
     (libexec/"bin/poetry").chmod 0755
     (bin/"poetry").write_env_script(libexec/"bin/poetry", :PYTHONPATH => ENV["PYTHONPATH"])
+    chmod 0755, bin/"poetry"
 
     [
       ["bash", bash_completion/"poetry"],
