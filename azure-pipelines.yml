@@ -3,7 +3,7 @@ jobs:
   pool:
     vmImage: macOS-10.14
   variables:
-    HOMEBREW_TAP_DIR: /usr/local/Homebrew/Library/Taps/zengxs/homebrew-mine
+    HOMEBREW_TAP_DIR: /usr/local/Homebrew/Library/Taps/zengxs/homebrew-tap
   steps:
     - bash: |
         set -e
