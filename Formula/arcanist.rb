@@ -20,8 +20,6 @@ class Arcanist < Formula
     end
   end
 
-  depends_on "php"
-
   def install
     resource("libphutil").stage do
       (libexec/"libphutil").install Dir["*"]
