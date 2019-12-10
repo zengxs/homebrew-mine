@@ -24,4 +24,4 @@ jobs:
         ln -s "$PWD" "$HOMEBREW_TAP_DIR"
 
     - name: Run brew test-bot
-      run: brew test-bot --ci-master --tap=zengxs/tap
+      run: brew test-bot --ci-auto --tap=zengxs/tap

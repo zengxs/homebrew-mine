@@ -1,8 +1,8 @@
 class Poetry < Formula
   desc "Python package management tool"
   homepage "https://github.com/sdispater/poetry"
-  url "https://github.com/sdispater/poetry/releases/download/0.12.17/poetry-0.12.17-darwin.tar.gz"
-  sha256 "25fc6ee55ebfc497827885c360a8c9773b1059f8343b76eaae0d1c380816bb59"
+  url "https://github.com/sdispater/poetry/releases/download/1.0.0b9/poetry-1.0.0b9-darwin.tar.gz"
+  sha256 "26b1ac56e5bba2011feaa36a47cb9d20b5af2c5b9b2060978314fad2cfdb7f97"
 
   depends_on "python"
 
