@@ -1,7 +1,9 @@
 # Homebrew Tap: zengxs/tap
-[![Azure DevOps builds](https://img.shields.io/azure-devops/build/zengxs/35f731e8-927f-4688-8214-20bbdfad9d5f/4.svg?logo=azure-pipelines)](https://dev.azure.com/zengxs/homebrew-mine/_build/latest?definitionId=4&branchName=master)
+[![License](https://img.shields.io/github/license/zengxs/homebrew-tap?color=blue)](LICENSE)
+![git repo size](https://img.shields.io/github/repo-size/zengxs/homebrew-tap?logo=git)
+![build status](https://img.shields.io/github/workflow/status/zengxs/homebrew-tap/build?logo=github)
 
-My homebrew formulae. 
+My homebrew formulae.
 
 ## How do I install these formulae?
 `brew install zengxs/tap/<formula>`
