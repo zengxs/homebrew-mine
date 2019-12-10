@@ -1,0 +1,27 @@
+name: build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+
+    env:
+      HOMEBREW_TAP_DIR: /usr/local/Homebrew/Library/Taps/zengxs/homebrew-tap
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 0  # fetch all history
+
+    - name: Update homebrew
+      run: |
+        brew update
+        mkdir -p "$HOMEBREW_TAP_DIR"
+        rm -rf "$HOMEBREW_TAP_DIR"
+        ln -s "$PWD" "$HOMEBREW_TAP_DIR"
+
+    - name: Run brew test-bot
+      run: brew test-bot --ci-master --tap=zengxs/tap
