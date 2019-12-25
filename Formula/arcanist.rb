@@ -4,8 +4,8 @@ class Arcanist < Formula
 
   stable do
     url "https://github.com/phacility/arcanist.git",
-      :revision => "8b5fbb5a134611dd1e254bffee0166090caf5ac2"
-    version "2019.09.09"
+      :revision => "bac2028421a4be6e34e08764bbbda49e68b3a604"
+    version "2019.11.20"
 
     resource "libphutil" do
       url "https://github.com/phacility/libphutil.git", :branch => "stable"
