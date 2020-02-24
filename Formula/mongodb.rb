@@ -2,8 +2,8 @@
 class Mongodb < Formula
   desc "High-performance, schema-free, document-oriented database"
   homepage "https://www.mongodb.com/download-center/community"
-  url "https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-4.2.0.tgz"
-  sha256 "6aa2e0c348e8abeec7931dced1f85d4bb161ef209c6af317fe530ea11bbac8f0"
+  url "https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-4.2.3.tgz"
+  sha256 "edbfbb93061b7aea518ad2f08eea55d02b088d5b9ed4789cfb5d9ed4bf8fb2e8"
 
   bottle :unneeded
 
