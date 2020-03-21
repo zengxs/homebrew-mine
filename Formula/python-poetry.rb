@@ -1,4 +1,4 @@
-class Poetry < Formula
+class PythonPoetry < Formula
   desc "Python package management tool"
   homepage "https://python-poetry.org"
   url "https://github.com/python-poetry/poetry/releases/download/1.0.3/poetry-1.0.3-darwin.tar.gz"
