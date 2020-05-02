@@ -2,33 +2,18 @@ class Arcanist < Formula
   desc "Command-line interface for Phabricator"
   homepage "https://github.com/phacility/arcanist"
 
-  stable do
-    url "https://github.com/phacility/arcanist.git",
-      :revision => "729100955129851a52588cdfd9b425197cf05815"
-    version "2020.5"
+  url "https://github.com/phacility/arcanist.git",
+    :revision => "31c6b56b67b056fc6a59c2edeebfe77f4688bec7"
+  version "2020.17"
 
-    resource "libphutil" do
-      url "https://github.com/phacility/libphutil.git", :branch => "stable"
-    end
-  end
-
-  head do
-    url "https://github.com/phacility/arcanist.git"
-
-    resource "libphutil" do
-      url "https://github.com/phacility/libphutil.git"
-    end
-  end
+  head "https://github.com/phacility/arcanist.git"
 
   uses_from_macos "php"
 
   def install
-    resource("libphutil").stage do
-      (libexec/"libphutil").install Dir["*"]
-    end
-
     (libexec/"arcanist").install Dir["*"]
     bin.write_exec_script libexec/"arcanist/bin/arc"
+    bin.write_exec_script libexec/"arcanist/bin/phage"
 
     bash_completion.install_symlink libexec/"arcanist/resources/shell/bash-completion" => "arc"
     zsh_completion.install_symlink libexec/"arcanist/resources/shell/bash-completion" => "_arc"
