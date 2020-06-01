@@ -1,8 +1,8 @@
 class PythonPoetry < Formula
   desc "Python package management tool"
   homepage "https://python-poetry.org"
-  url "https://github.com/python-poetry/poetry/releases/download/1.0.3/poetry-1.0.3-darwin.tar.gz"
-  sha256 "a73fe957fcb500c2d5db35cdf77de94d831cf11e0f24aeb832df39a96443abfa"
+  url "https://github.com/python-poetry/poetry/releases/download/1.0.5/poetry-1.0.5-darwin.tar.gz"
+  sha256 "57f1666b8abb23dd84fa16623337e6d97d209b7faf288a1b4c09e3ca82ca296b"
 
   resource "pysocks" do
     url "https://files.pythonhosted.org/packages/bd/11/293dd436aea955d45fc4e8a35b6ae7270f5b8e00b53cf6c024c83b657a11/PySocks-1.7.1.tar.gz"
