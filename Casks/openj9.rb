@@ -1,15 +1,15 @@
 cask 'openj9' do
-  version '0.15.1,8u222-b10'
-  sha256 'df185e167756332163633a826b329db067f8a721f7d5d27f0b353a35fc415de0'
+  version '0.20.0,8u252-b09.2'
+  sha256 'f522061a23290bce3423e49025a95b6e78d6f30e2741817e83c8fdba4c0c4ae7'
 
   # github.com/AdoptOpenJDK was verified as official when first introduced to the cask
-  url "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk#{version.after_comma}_openj9-#{version.before_comma}/OpenJDK8U-jdk_x64_mac_openj9_#{version.after_comma.no_hyphens}_openj9-#{version.before_comma}.tar.gz"
+  url "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk#{version.after_comma}_openj9-#{version.before_comma}/OpenJDK8U-jdk_x64_mac_openj9_#{version.after_comma.major.no_hyphens}_openj9-#{version.before_comma}.tar.gz"
   name 'AdoptOpenJDK Prebuilt Eclipse OpenJ9'
   homepage 'https://www.eclipse.org/openj9/'
 
   postflight do
-    FileUtils.mv(staged_path.join("jdk#{version.after_comma}/Contents/Home").children, staged_path)
-    FileUtils.rm_rf(staged_path.join("jdk#{version.after_comma}"))
+    FileUtils.mv(staged_path.join("jdk#{version.after_comma.major}/Contents/Home").children, staged_path)
+    FileUtils.rm_rf(staged_path.join("jdk#{version.after_comma.major}"))
   end
 
   caveats <<~EOS
