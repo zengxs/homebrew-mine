@@ -2,8 +2,8 @@
 class Mongodb < Formula
   desc "High-performance, schema-free, document-oriented database"
   homepage "https://www.mongodb.com/download-center/community"
-  url "https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-4.2.3.tgz"
-  sha256 "edbfbb93061b7aea518ad2f08eea55d02b088d5b9ed4789cfb5d9ed4bf8fb2e8"
+  url "https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-4.2.7.tgz"
+  sha256 "18ee9adc43aa71f345cdb7750ff95a0a8da30c34e1559a5d0d9b30faf4a1aa9f"
 
   bottle :unneeded
 
@@ -24,6 +24,9 @@ class Mongodb < Formula
       logAppend: true
     storage:
       dbPath: #{var}/mongodb
+      wiredTiger:
+        engineConfig:
+          cacheSizeGB: 0.25
     net:
       bindIp: 127.0.0.1
   EOS
