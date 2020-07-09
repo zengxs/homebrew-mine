@@ -1,4 +1,4 @@
-class GostProxy < Formula
+class Gost < Formula
   desc "Simple tunnel written in golang"
   homepage "https://github.com/ginuerzh/gost"
   url "https://github.com/ginuerzh/gost/releases/download/v2.11.0/gost-darwin-amd64-2.11.0.gz"
@@ -6,7 +6,7 @@ class GostProxy < Formula
 
   def install
     bin.install "gost-darwin-amd64" => "gost"
-    (etc/"gost-proxy.json").write <<~EOS
+    (etc/"gost.json").write <<~EOS
       {
         "ServeNodes": [
           "http://localhost:8888"
@@ -17,7 +17,7 @@ class GostProxy < Formula
     EOS
   end
 
-  plist_options :manual => "#{HOMEBREW_PREFIX}/opt/gost-proxy/bin/gost -C #{HOMEBREW_PREFIX}/etc/gost-proxy.json"
+  plist_options :manual => "#{HOMEBREW_PREFIX}/opt/gost/bin/gost -C #{HOMEBREW_PREFIX}/etc/gost.json"
 
   def plist
     <<~EOS
@@ -31,7 +31,7 @@ class GostProxy < Formula
           <array>
             <string>#{opt_bin}/gost</string>
             <string>-C</string>
-            <string>#{etc}/gost-proxy.json</string>
+            <string>#{etc}/gost.json</string>
           </array>
           <key>RunAtLoad</key>
           <true/>
