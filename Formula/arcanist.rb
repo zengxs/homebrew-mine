@@ -2,9 +2,9 @@ class Arcanist < Formula
   desc "Command-line interface for Phabricator"
   homepage "https://github.com/phacility/arcanist"
 
-  url "https://github.com/phacility/arcanist/archive/ccd39feb6d3bbd84e122817b0d8b36284b6edd9d.tar.gz"
-  sha256 "d885b6df3d0ad7ccf2abb54d71364f465b7b774e1ffde0ea326c793ffe5a9cf2"
-  version "2020.29"
+  url "https://github.com/phacility/arcanist/archive/68dba1a2c6d9fe1de7b9d4c944336458d0f016b3.tar.gz"
+  sha256 "8804a17acff0a137df1095a5fda67263ec6a7e96056a6d6d418391bf88824968"
+  version "2020.37"
 
   head "https://github.com/phacility/arcanist.git"
 
