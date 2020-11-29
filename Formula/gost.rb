@@ -1,8 +1,9 @@
 class Gost < Formula
   desc "Simple tunnel written in golang"
   homepage "https://github.com/ginuerzh/gost"
-  url "https://github.com/ginuerzh/gost/releases/download/v2.11.0/gost-darwin-amd64-2.11.0.gz"
-  sha256 "a19da66f441f184319b243ae6254e877b8ab34482508817f85929a08d1f6ddc7"
+  url "https://files.zengxs.com/Dist/gost/gost-darwin-amd64-2.11.1.gz?raw=1"
+  mirror "https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-darwin-amd64-2.11.1.gz"
+  sha256 "8585ab801b0c92423d837bbaeaf0ded8324cd5ba977571a476934731c9279570"
 
   def install
     bin.install "gost-darwin-amd64" => "gost"
